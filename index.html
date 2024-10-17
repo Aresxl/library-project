@@ -14,9 +14,14 @@
         <label for="authorName">Author</label>
         <input type="text" id="authorName">
         <label for="bookPages">Pages</label>
-        <input type="text" id="bookPages">
-        <label for="radioBtn">Read</label>
-        <input type="radio" name="" id="radioBtn">
+        <input type="number" id="bookPages" min="50">
+
+        <label>Read</label>
+        <input type="radio" name="readStatus" id="readYes" value="Yes">
+        <label for="readYes">Yes</label>
+        <input type="radio" name="readStatus" id="readNo" value="No">
+        <label for="readNo">No</label>
+
         <button id="cancelBtn">Cancel</button>
         <button id="submitBtn">Submit</button>
     </div>
