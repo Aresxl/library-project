@@ -24,6 +24,12 @@ function submitForm(event) {
     console.log("Pages: ", bookPages);
     console.log("Read Status: ", readStatus);
 
+    const newBook = new Book(bookTitle, authorName, bookPages, readStatus);
+    myLibrary.push(newBook);
+
+    console.log(newBook);
+    console.log(myLibrary);
+
     clearForm();
 }
 
@@ -36,7 +42,7 @@ function clearForm() {
     readNoInput.checked = false;
 }
 
-
+//
 
 
 const myLibrary = [];
