@@ -18,3 +18,23 @@
 .formContainer button {
     width: 100px;
 }
+
+
+
+.bookContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+
+    margin-top: 100px;
+}
+
+.bookContainer input[type='radio'] {
+    width: 100px;
+}
+
+
+
+.bookCard {
+    /* Style later */
+}

@@ -1,6 +1,6 @@
-const bookTitleInput = document.getElementById("bookTitle");
-const authorNameInput = document.getElementById("authorName");
-const bookPagesInput = document.getElementById("bookPages");
+const bookTitleInput = document.getElementById("bookTitleInput");
+const authorNameInput = document.getElementById("authorNameInput");
+const bookPagesInput = document.getElementById("bookPagesInput");
 const readYesInput = document.getElementById("readYes");
 const readNoInput = document.getElementById("readNo");
 
@@ -59,7 +59,44 @@ let Magician = new Book('Magician', 'Raymond E Feist', 1000, true);
 let HungerGames = new Book('Hunger Games', 'Suzanne Collins', 374, false);
 let FreeYourMind = new Book('FreeYourMind', 'Kenny McLoving', '278', false);
 
+myLibrary.push(Magician);
+myLibrary.push(HungerGames)
 
-function addBookToLibrary() {
 
-};
+// Showing on Page Section
+
+const bookContainer = document.querySelector('.bookContainer');
+
+function displayBook(bookArray) {
+    bookContainer.textContent = '';
+
+    bookArray.forEach(book => {
+        const bookCard = document.createElement('div');
+        bookCard.classList.add('bookCard');
+
+        const titleElement = document.createElement('h3');
+        titleElement.textContent = book.title;
+
+        const authorElement = document.createElement('p');
+        authorElement.textContent = `Author: ${book.author}`;
+
+        const pagesElement = document.createElement('p');
+        pagesElement.textContent = `Pages: ${book.pages}`;
+
+        const readElement = document.createElement('p');
+        readElement.textContent = `Read ${book.read ? 'Yes' : 'No'}`;
+
+        bookCard.appendChild(titleElement);
+        bookCard.appendChild(authorElement);
+        bookCard.appendChild(pagesElement);
+        bookCard.appendChild(readElement);
+
+        bookContainer.appendChild(bookCard);
+    });
+}
+
+displayBook(myLibrary);
+
+
+
+console.log(myLibrary);
