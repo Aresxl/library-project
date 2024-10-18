@@ -4,12 +4,27 @@ const bookPagesInput = document.getElementById("bookPagesInput");
 const readYesInput = document.getElementById("readYes");
 const readNoInput = document.getElementById("readNo");
 
+
+
+
+
+const addBookBtn = document.getElementById("addBookBtn");
+const formContainer = document.querySelector('.formContainer');
+
 const cancelBtn = document.getElementById("cancelBtn");
 const submitBtn = document.getElementById("submitBtn");
 
+addBookBtn.addEventListener('click', formPopup);
 
 cancelBtn.addEventListener('click', clearForm);
 submitBtn.addEventListener('click', submitForm);
+
+function formPopup (event) {
+    formContainer.style.visibility = 'visible';
+};
+
+
+
 
 function submitForm(event) {
     event.preventDefault();
@@ -30,7 +45,9 @@ function submitForm(event) {
     console.log(newBook);
     console.log(myLibrary);
 
+    displayBook(myLibrary);
     clearForm();
+    formContainer.style.visibility = 'hidden';
 }
 
 function clearForm() {
@@ -55,12 +72,11 @@ function Book(title, author, pages, read) {
 };
 
 
-let Magician = new Book('Magician', 'Raymond E Feist', 1000, true);
-let HungerGames = new Book('Hunger Games', 'Suzanne Collins', 374, false);
-let FreeYourMind = new Book('FreeYourMind', 'Kenny McLoving', '278', false);
+// let Magician = new Book('Magician', 'Raymond E Feist', 1000, true);
+// let HungerGames = new Book('Hunger Games', 'Suzanne Collins', 374, false);
+// let FreeYourMind = new Book('FreeYourMind', 'Kenny McLoving', '278', false);
 
-myLibrary.push(Magician);
-myLibrary.push(HungerGames)
+
 
 
 // Showing on Page Section
