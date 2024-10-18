@@ -5,26 +5,22 @@ const readYesInput = document.getElementById("readYes");
 const readNoInput = document.getElementById("readNo");
 
 
-
-
-
-const addBookBtn = document.getElementById("addBookBtn");
 const formContainer = document.querySelector('.formContainer');
-
+const addBookBtn = document.getElementById("addBookBtn");
 const cancelBtn = document.getElementById("cancelBtn");
 const submitBtn = document.getElementById("submitBtn");
+const header = document.querySelector('header');
+const bookContainer = document.querySelector('.bookContainer');
 
 addBookBtn.addEventListener('click', formPopup);
-
 cancelBtn.addEventListener('click', clearForm);
 submitBtn.addEventListener('click', submitForm);
 
 function formPopup (event) {
     formContainer.style.visibility = 'visible';
+    header.classList.add('blurred');
+    bookContainer.classList.add('blurred');
 };
-
-
-
 
 function submitForm(event) {
     event.preventDefault();
@@ -57,6 +53,11 @@ function clearForm() {
     bookPagesInput.value = ''
     readYesInput.checked = false;
     readNoInput.checked = false;
+
+    formContainer.style.visibility = 'hidden';
+    header.classList.remove('blurred');
+    bookContainer.classList.remove('blurred');
+
 }
 
 //
@@ -72,19 +73,30 @@ function Book(title, author, pages, read) {
 };
 
 
-// let Magician = new Book('Magician', 'Raymond E Feist', 1000, true);
-// let HungerGames = new Book('Hunger Games', 'Suzanne Collins', 374, false);
-// let FreeYourMind = new Book('FreeYourMind', 'Kenny McLoving', '278', false);
+let Magician = new Book('Magician', 'Raymond E Feist', 1000, true);
+let HungerGames = new Book('Hunger Games', 'Suzanne Collins', 374, false);
+let FreeYourMind = new Book('FreeYourMind', 'Kenny McLoving', '278', false);
+let Example = new Book('Example', 'Kenny McLoving', '278', false);
+let Example2 = new Book('FreeYourMind', 'Kenny McLoving', '278', false);
+let Example3 = new Book('FreeYourMind', 'Kenny McLoving', '278', false);
+
+
+myLibrary.push(Magician);
+myLibrary.push(HungerGames);
+myLibrary.push(FreeYourMind);
+myLibrary.push(Example);
+myLibrary.push(Example2);
+
 
 
 
 
 // Showing on Page Section
 
-const bookContainer = document.querySelector('.bookContainer');
+const gridContainer = document.querySelector('.gridContainer');
 
 function displayBook(bookArray) {
-    bookContainer.textContent = '';
+    gridContainer.textContent = '';
 
     bookArray.forEach(book => {
         const bookCard = document.createElement('div');
@@ -107,7 +119,7 @@ function displayBook(bookArray) {
         bookCard.appendChild(pagesElement);
         bookCard.appendChild(readElement);
 
-        bookContainer.appendChild(bookCard);
+        gridContainer.appendChild(bookCard);
     });
 }
 

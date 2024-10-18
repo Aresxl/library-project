@@ -9,7 +9,8 @@
 <body>
     <header>
         <h1>My Library</h1>
-        <button id="addBookBtn">Add Book</button>
+        <input type="text" name="" id="searchBar" placeholder="Search Book">
+        <button id="addBookBtn">+Add Book</button>
     </header>
 
     <div class="formContainer">
@@ -18,18 +19,23 @@
             <input type="text" id="authorNameInput" placeholder="Author">
             <input type="number" id="bookPagesInput" min="50" placeholder="Pages">
 
-            <label>Read</label>
-            <input type="radio" name="readStatus" id="readYes" value="Yes">
-            <label for="readYes">Yes</label>
-            <input type="radio" name="readStatus" id="readNo" value="No">
-            <label for="readNo">No</label>
+        <div class="checkboxContainer">   
+            <label>Have you read the book?</label>
+            <input type="checkbox" name="bookRead" id="checkBox">
+        </div> 
 
+        <div class="buttonContainer">
             <button id="cancelBtn">Cancel</button>
             <button id="submitBtn">Submit</button>
+        </div>    
         </form>    
     </div>
 
-    <div class="bookContainer"></div>
+    <div class="bookContainer">
+        <div class="gridContainer">
+
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

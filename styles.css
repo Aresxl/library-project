@@ -4,16 +4,48 @@
 }
 
 body {
-    background-color: rgba(39, 26, 9, 0.877);
+    background-color: rgb(6, 27, 23);
+
 }
 
 header {
     display: flex;
     justify-content: space-between;
     height: 50px;
-    margin: 20px 10px;
+    margin: 20px 100px;
     padding: 10px;
-    background-color: rgba(61, 39, 10, 0.822)
+}
+
+header h1 {
+    color: white;
+}
+
+#searchBar {
+    width: 600px;
+    height: 50px;
+    border-radius: 20px;
+    background-color:  rgb(9, 48, 35);
+    border: none;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#searchBar::placeholder {
+    color: white;
+}
+
+#addBookBtn {
+    background-color:  rgb(9, 48, 35);
+    color: white;
+    height: 40px;
+    width: 125px;
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
 }
 
 .formContainer {
@@ -25,7 +57,9 @@ header {
     left: 0;
     height: 100%;
     width: 100%;
+    z-index: 10000;
     visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
     
 }
 
@@ -35,18 +69,47 @@ header {
     align-items: center;
     height: 300px;
     width: 250px;
-    background-color: white;
+    background-color: rgba(7, 7, 7, 0.829);
     padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    z-index: 1001;
+    color: white;
+    font-weight: bold;
+}
+
+.checkboxContainer input {
+    margin-top: 10px;
+    height: 15px;
+    
+}
+#myForm input {
+    width: 210px;
+    padding: 10px;
     border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border: 1px solid rgb(247, 247, 247);
+    background-color: rgba(7, 7, 7, 0.829);
 }
+#myForm input::placeholder {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+} 
 
 
-.formContainer input {
-    width: 175px;
-}
-
-.formContainer button {
+.buttonContainer button {
     width: 100px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: rgba(7, 7, 7, 0.829); ;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
 }
 
 
@@ -54,17 +117,48 @@ header {
 .bookContainer {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
-
-    margin-top: 100px;
+    margin-left: 60px;
+    margin-right: 60px;
+    max-height: 720px;
+    border-radius: 20px;
+    background-color: rgb(9, 48, 35);
+    height: 720px;
 }
 
-.bookContainer input[type='radio'] {
-    width: 100px;
+.gridContainer {
+    display: grid;
+    padding: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 
 
 .bookCard {
-    /* Style later */
+    color: white;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.473);
+    align-content: center;
+    text-align: center;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, .9);
+}
+.bookCard h3 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.bookCard p {
+    margin: 15px;
+    font-size: 1.1em;
+    font-weight: 900;
+}
+
+
+/* Experimenting with blur */
+.blurred {
+    filter: blur(5px);
+    transition: filter 0.3 ease;
 }
